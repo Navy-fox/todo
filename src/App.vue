@@ -1,11 +1,9 @@
 <template>
   <div class="todo">
     <div class="wrapper">
-      <div class="todo__input">
-        <input class="input" type="text" placeholder="Add new task">
-        <v-button/>
-      </div>
       <todo-list></todo-list>
+      <profile></profile>
+      <profile/>
     </div>
   </div>
 </template>
@@ -13,11 +11,12 @@
 <script>
 
 import TodoList from "./components/todo-list";
-import VButton from "./components/v-button";
+import Profile from "./components/profile";
 
 export default {
   name: 'App',
-  components: {VButton, TodoList}
+  components: {Profile, TodoList},
+
 }
 </script>
 
@@ -31,7 +30,6 @@ export default {
   border-color: #BDBDBD;
   outline: none;
 }
-
 
 .wrapper {
   max-width: 1440px;
@@ -80,4 +78,16 @@ export default {
     }
   }
 }
+
+//.profile__card{
+//  display: grid;
+//  grid-template-columns: repeat(4, 1fr);
+//  //grid-template-rows: repeat(3, 100px);
+//}
+//
+//.card {
+//  color: navy;
+//  border: 1px solid #BDBDBD;
+//
+//}
 </style>
