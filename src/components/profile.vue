@@ -1,10 +1,10 @@
 <template>
   <div class="profile">
-    <div class="profile__card card" v-for="(index,key) in users" :key="key">
-      <p class="card__item">Name: {{ index.name }}</p>
-      <p class="card__item">e-mail: {{ index.email }}</p>
-      <p class="card__item">Web-site: {{ index.website }}</p>
-    </div>
+    <router-link :to="`/todo/${item.id}`" class="profile__card card" v-for="(item,key) in users" :key="key">
+      <p class="card__item">Name: {{ item.name }}</p>
+      <p class="card__item">e-mail: {{ item.email }}</p>
+      <p class="card__item">Web-site: {{ item.website }}</p>
+    </router-link>
   </div>
 </template>
 

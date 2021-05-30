@@ -33,8 +33,14 @@ export default {
     tasks: [],
     title: '',
   }),
+  props: {
+    userId: {
+      type: Number,
+      required: true
+    }
+  },
   async created() {
-    const res = await axios.get('https://jsonplaceholder.typicode.com/todos', {params: {_limit: 5}})
+    const res = await axios.get('https://jsonplaceholder.typicode.com/todos', {params: {userId: this.userId}})
     this.tasks = res.data
   },
   methods: {
@@ -49,7 +55,7 @@ export default {
       }
     },
     addTask() {
-            const objectTask = {
+      const objectTask = {
         completed: false,
         id: this.tasks.length + 100,
         title: this.title,
@@ -57,7 +63,7 @@ export default {
       }
       //Добавить объект в массив this.tasks
       this.tasks.push(objectTask)
-      this.title=''
+      this.title = ''
     }
   }
 }

@@ -1,24 +1,10 @@
 <template>
   <div class="todo">
     <div class="wrapper">
-      <todo-list></todo-list>
-      <profile></profile>
-      <profile/>
+      <router-view/>
     </div>
   </div>
 </template>
-
-<script>
-
-import TodoList from "./components/todo-list";
-import Profile from "./components/profile";
-
-export default {
-  name: 'App',
-  components: {Profile, TodoList},
-
-}
-</script>
 
 <style lang="scss">
 .input {
@@ -79,15 +65,5 @@ export default {
   }
 }
 
-//.profile__card{
-//  display: grid;
-//  grid-template-columns: repeat(4, 1fr);
-//  //grid-template-rows: repeat(3, 100px);
-//}
-//
-//.card {
-//  color: navy;
-//  border: 1px solid #BDBDBD;
-//
-//}
 </style>
+
